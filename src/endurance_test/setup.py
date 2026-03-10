@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-             'nav_to_pose = endurance_test.nav_to_pose:main',
+            'nav_to_pose = endurance_test.nav_to_pose:main',
+            'sim_patrol = endurance_test.sim_patrol:main',
         ],
     },
 )

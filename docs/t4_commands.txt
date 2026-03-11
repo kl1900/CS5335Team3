@@ -1,0 +1,149 @@
+
+# source ros environment
+source /opt/ros/humble/setup.bash
+
+# Topic list
+ros2 topic list
+
+# Node list
+ros2 node list
+
+# Keyboard teleop
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/turtlebot468
+
+# launch SLAM
+ros2 launch turtlebot4_navigation slam.launch.py namespace:=/turtlebot468
+
+# launch rviz
+ros2 launch turtlebot4_viz view_robot.launch.py namespace:=/turtlebot468
+
+# Save map
+ros2 run nav2_map_server map_saver_cli -f "robotics_lab_map" --ros-args -p map_subscribe_transient_local:=true -r __ns:=/turtlebot468
+
+# Launch localization with map - make sure you are inside the directory with the map
+ros2 launch turtlebot4_navigation localization.launch.py map:=./robotics_lab_map.yaml namespace:=/turtlebot468
+
+# Launch navigation
+ros2 launch turtlebot4_navigation nav2.launch.py namespace:=/turtlebot468
+
+# View published point
+ros2 topic echo turtlebot468/clicked_point
+Then click on publish point, select a point
+
+# Remove/Add this line to etc/turtlebot4_discovery/setup.bash to swtch discovery
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+
+
+# Initial Pose
+header:
+  stamp:
+    sec: 1771962199
+    nanosec: 942786837
+  frame_id: map
+point:
+  x: -0.4226645827293396
+  y: -0.6871621608734131
+  z: -0.005340576171875
+
+# Goal Pose
+header:
+  stamp:
+    sec: 1771962411
+    nanosec: 300440091
+  frame_id: map
+point:
+  x: -8.23007583618164
+  y: 0.3096088767051697
+  z: 0.34429931640625
+---
+
+# Dock pose / pose at the dock
+header:
+  stamp:
+    sec: 1771964093
+    nanosec: 640035171
+  frame_id: map
+point:
+  x: -2.228640556335449
+  y: -3.4138245582580566
+  z: 0.002471923828125
+  
+
+# Waypoint 2
+header:
+  stamp:
+    sec: 1771965579
+    nanosec: 356290133
+  frame_id: map
+point:
+  x: -0.5466975569725037
+  y: -0.07592377811670303
+  z: 0.34429931640625
+  
+
+# These waypoints and poses are too far apart and the points need to be much closer for it to work  
+
+
+# Orientation in the goal pose
+header:
+  stamp:
+    sec: 1771963142
+    nanosec: 817317745
+  frame_id: odom
+child_frame_id: base_link
+pose:
+  pose:
+    position:
+      x: 3.167893886566162
+      y: -0.41452687978744507
+      z: 0.1784941405057907
+    orientation:
+      x: -0.0036490412894636393
+      y: 0.002081309212371707
+      z: -0.9746493697166443
+      w: 0.22369851171970367
+
+
+# Run the endurance_test file
+ros2 run endurance_test nav_to_pose --ros-args -r __ns:=/turtlebot468
+
+# Build package after changes to code (from inside the ws)
+colcon build --packages-select endurance_test
+source install/setup.bash
+
+
+# Endurance test First run!
+ros2 run endurance_test nav_to_pose --ros-args -r __ns:=/turtlebot468
+[INFO] [1771964771.540208038] [turtlebot468.basic_navigator]: Docking before initialising pose
+[INFO] [1771964771.540526588] [turtlebot468.basic_navigator]: Docking...
+[INFO] [1771964805.100185261] [turtlebot468.basic_navigator]: Dock succeeded
+[INFO] [1771964805.100574021] [turtlebot468.basic_navigator]: Publishing Initial Pose
+[INFO] [1771964809.307118022] [turtlebot468.basic_navigator]: Nav2 is ready for use!
+[INFO] [1771964809.307880023] [turtlebot468.basic_navigator]: Undocking...
+[INFO] [1771964814.983065595] [turtlebot468.basic_navigator]: Undock succeeded
+[INFO] [1771964814.983728402] [turtlebot468.basic_navigator]: Navigating to goal: -8.23 0.309...
+[INFO] [1771964887.268625818] [turtlebot468.basic_navigator]: Goal succeeded!
+
+
+# Localization map error
+ros2 launch turtlebot4_navigation localization.launch.py map:=./robotics_lab_map.yaml 
+[INFO] [launch]: All log files can be found below /home/khouryloaner215/.ros/log/2026-02-23-14-39-44-075833-214-10719
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [map_server-1]: process started with pid [10720]
+[INFO] [amcl-2]: process started with pid [10722]
+[INFO] [lifecycle_manager-3]: process started with pid [10724]
+[lifecycle_manager-3] [INFO] [1771886384.161591484] [lifecycle_manager_localization]: Creating
+[lifecycle_manager-3] [INFO] [1771886384.162462528] [lifecycle_manager_localization]: Creating and initializing lifecycle service clients
+[amcl-2] [INFO] [1771886384.163131390] [amcl]: 
+[amcl-2] 	amcl lifecycle node launched. 
+[amcl-2] 	Waiting on external lifecycle transitions to activate
+[amcl-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-2] [INFO] [1771886384.163469983] [amcl]: Creating
+[map_server-1] [INFO] [1771886384.166604876] [map_server]: 
+[map_server-1] 	map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1771886384.166663635] [map_server]: Creating
+[lifecycle_manager-3] [INFO] [1771886386.163195240] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-3] [INFO] [1771886388.163717736] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-3] [INFO] [1771886390.164234673] [lifec

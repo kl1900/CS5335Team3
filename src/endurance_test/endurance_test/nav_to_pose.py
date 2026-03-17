@@ -26,7 +26,7 @@ def main():
     # Define waypoints
     waypoint1 = navigator.getPoseStamped([-0.546, -0.0759], TurtleBot4Directions.SOUTH_EAST)
     # Same as goal pose for now
-    waypoint2 = navigator.getPoseStamped([-8.23, 0.309], TurtleBot4Directions.SOUTH_WEST)
+    #waypoint2 = navigator.getPoseStamped([-8.23, 0.309], TurtleBot4Directions.SOUTH_WEST)
 
     # Set goal pose 
     # goal_pose = navigator.getPoseStamped([-8.23, 0.309], TurtleBot4Directions.SOUTH_WEST)
@@ -38,20 +38,24 @@ def main():
     # navigator.startToPose(goal_pose)
     
     # Go to waypoint1
-    navigator.info('Navigating to waypoint1...')
-    navigator.startToPose(waypoint1)
+    #navigator.info('Navigating to waypoint1...')
+    #navigator.startToPose(waypoint1)
     
     # Go to waypoint2    
-    navigator.info('Navigating to waypoint2...')
-    navigator.startToPose(waypoint2)
+    #navigator.info('Navigating to waypoint2...')
+    #navigator.startToPose(waypoint2)
     
     # Go back to waypoint1
-    navigator.info('Navigating to waypoint1...')
-    navigator.startToPose(waypoint1)
+    #navigator.info('Navigating to waypoint1...')
+    #navigator.startToPose(waypoint1)
     
     # Go back to initial pose
     navigator.info('Navigating closer to dock...')
     navigator.startToPose(initial_pose)
+    
+    # Go to waypoint1
+    navigator.info('Navigating to waypoint1...')
+    navigator.startToPose(waypoint1)
     
     # Return to dock
     navigator.info('Returning to dock...')

@@ -26,6 +26,8 @@ setup(
     entry_points={
         'console_scripts': [
             'battery_monitor = battery_monitor.battery_monitor:main',
+            'patrol_with_battery = battery_monitor.patrol_with_battery:main',
+            'nav_to_pose = battery_monitor.nav_to_pose:main',
         ],
     },
 )

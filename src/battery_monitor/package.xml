@@ -2,16 +2,22 @@
 <package format="3">
   <name>battery_monitor</name>
   <version>0.0.0</version>
-  <description>Battery monitor node for TurtleBot4</description>
+  <description>Battery monitor and patrol node for TurtleBot4</description>
 
   <maintainer email="kuolu@pm.me">your_name</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
 
+  <!-- Original dependencies (Kuo's battery_monitor.py) -->
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
+
+  <!-- Added for patrol_with_battery.py and nav_to_pose.py -->
+  <depend>geometry_msgs</depend>
+  <depend>nav2_simple_commander</depend>
+  <depend>turtlebot4_navigation</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

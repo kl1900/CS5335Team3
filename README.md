@@ -43,3 +43,31 @@ To test packages run, after adding tests, run
 colcon test --packages-select <my_robot_package>
 colcon test-result --verbose
 ```
+
+# commands
+```
+1.
+source /opt/ros/humble/setup.bash
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+ros2 launch turtlebot4_navigation localization.launch.py map:=/home/team3/CS5335Team3-1/docs/robotics_lab_map.yaml namespace:=/turtlebot468
+
+2.
+source /opt/ros/humble/setup.bash
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+ros2 launch turtlebot4_navigation nav2.launch.py namespace:=/turtlebot468
+
+3.
+source /opt/ros/humble/setup.bash
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+cd /home/team3/CS5335Team3-1
+colcon build --packages-select battery_monitor
+source install/setup.bash
+ros2 run battery_monitor battery_monitor --ros-args -r __ns:=/turtlebot468
+
+4.
+source /opt/ros/humble/setup.bash
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+cd /home/team3/CS5335Team3-1
+source install/setup.bash
+ros2 run battery_monitor patrol_with_battery --ros-args -r __ns:=/turtlebot468
+```

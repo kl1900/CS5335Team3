@@ -2,9 +2,11 @@
 
 [Proposal Link](https://docs.google.com/document/d/1rNEDmhcds6Ypxy9_O8n1p-JhhkwlK8lQpenq4bSY6Y8/edit?usp=sharing)
 
+[Powerpoint Link](https://docs.google.com/presentation/d/1fs7SOLTvtHNyI32KZREAG7GUd3kFVpcYzrHSkBopCqQ/edit?slide=id.p9#slide=id.p9)
+
 [Simulation Video Link](https://drive.google.com/file/d/1MK8fB7xf5hbMFfOe3o7p1UrOKtWTYU6Z/view?usp=sharing)
 
-[Turtlebot Robot video (TBD)]()
+[Turtlebot Robot video (TBD)](https://drive.google.com/file/d/1dghiQFLf2fhBGTypsvCxqyDWE4qwN9BK/view?usp=sharing)
 # Build and run
 ```
 cd <path>/<to>/<project>

@@ -5,7 +5,7 @@
 [Simulation Video Link](https://drive.google.com/file/d/1MK8fB7xf5hbMFfOe3o7p1UrOKtWTYU6Z/view?usp=sharing)
 
 [Turtlebot Robot video (TBD)]()
-# Build
+# Build and run
 ```
 cd <path>/<to>/<project>
 ```
@@ -23,6 +23,26 @@ to run simulation
 ros2 launch turtlebot4_ignition_bringup turtlebot4_ignition.launch.py nav2:=true slam:=false localization:=true rviz:=true
 
 ros2 run patrol patrol_loop
+```
+
+To run with Turtlebot 4
+With our specific setting
+```
+# Terminal 1
+bashsource /opt/ros/humble/setup.bash
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+ros2 launch turtlebot4_navigation localization.launch.py map:=/<path>/<to>/<map>.yaml namespace:=/turtlebot468
+
+# Terminal 2 — Nav2
+bashsource /opt/ros/humble/setup.bash
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+ros2 launch turtlebot4_navigation nav2.launch.py namespace:=/turtlebot468
+
+# Terminal 3 — Patrol loop (reads params.yml automatically)
+bashsource /opt/ros/humble/setup.bash
+export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"
+source install/setup.bash
+ros2 run patrol patrol_loop --ros-args -r __ns:=/turtlebot468 -p config:=/<path>/<to>/params.yml
 ```
 
 # Parameters

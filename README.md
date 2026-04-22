@@ -20,14 +20,15 @@ source install/setup.bash
 ```
 to run simulation
 ```bash
+# terminal 1
 ros2 launch turtlebot4_ignition_bringup turtlebot4_ignition.launch.py nav2:=true slam:=false localization:=true rviz:=true
-
+# terminal 2
 ros2 run patrol patrol_loop
 ```
 
 To run with Turtlebot 4
 With our specific setting
-```
+```bash
 # Terminal 1
 bashsource /opt/ros/humble/setup.bash
 export ROS_DISCOVERY_SERVER="192.168.50.31:11811;"

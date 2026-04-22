@@ -6,7 +6,7 @@
 
 [Simulation Video Link](https://drive.google.com/file/d/1MK8fB7xf5hbMFfOe3o7p1UrOKtWTYU6Z/view?usp=sharing)
 
-[Turtlebot Robot video (TBD)](https://drive.google.com/file/d/1dghiQFLf2fhBGTypsvCxqyDWE4qwN9BK/view?usp=sharing)
+[Turtlebot Robot video Link](https://drive.google.com/file/d/1dghiQFLf2fhBGTypsvCxqyDWE4qwN9BK/view?usp=sharing)
 # Build and run
 ```
 cd <path>/<to>/<project>

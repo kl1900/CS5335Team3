@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>battery_monitor</name>
+  <name>patrol</name>
   <version>0.0.0</version>
-  <description>Battery monitor node for TurtleBot4</description>
+  <description>Patrol node for TurtleBot4</description>
 
   <maintainer email="kuolu@pm.me">your_name</maintainer>
   <license>Apache License 2.0</license>

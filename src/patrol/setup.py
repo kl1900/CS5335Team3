@@ -1,6 +1,8 @@
+import os
+from glob import glob
 from setuptools import setup
 
-package_name = 'battery_monitor'
+package_name = 'patrol'
 
 setup(
     name=package_name,
@@ -20,13 +22,12 @@ setup(
     zip_safe=True,
     maintainer='Kuo Lu',
     maintainer_email='kuolu@pm.me',
-    description='Battery monitor node for TurtleBot4',
+    description='Patrol node for TurtleBot4',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'battery_monitor = battery_monitor.battery_monitor:main',
-            'patrol_with_battery = battery_monitor.patrol_with_battery:main',
+            'patrol_loop = patrol.patrol_loop:main',
         ],
     },
 )

@@ -1,20 +1,24 @@
-battery_high: 0.99
-battery_low: 0.98
+battery_high: 0.98
+battery_low: 0.96
 battery_critical: 0.10
 
 goals:
-  - x: -5.0
-    y: 1.0
+  - x: -1.86
+    y: 0.26
     direction: EAST
 
-  - x: -5.0
-    y: -23.0
+  - x: -3.31
+    y: -3.50
     direction: NORTH
 
-  - x: 9.0
-    y: -23.0
+  - x: -0.48
+    y: -4.21
     direction: NORTH_WEST
 
-  - x: 10.0
-    y: 2.0
+  - x: 3.15
+    y: -4.03
+    direction: WEST
+  
+  - x: 4.08
+    y: -1.51
     direction: WEST

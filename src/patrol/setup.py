@@ -27,7 +27,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'battery_patrol = patrol.patrol_with_battery:main',
             'patrol_loop = patrol.patrol_loop:main',
         ],
     },
